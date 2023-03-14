@@ -6,7 +6,7 @@ import com.pragma.foodCourt.application.dto.response.feign.RestaurantFeignDto;
 import com.pragma.foodCourt.application.handler.IUsersHandler;
 import com.pragma.foodCourt.application.mapper.IUsersRequestMapper;
 import com.pragma.foodCourt.application.mapper.IUsersResponseMapper;
-import com.pragma.foodCourt.application.mapper.feign.RestaurantFeignClient;
+import com.pragma.foodCourt.application.mapper.feign.IRestaurantFeignClient;
 import com.pragma.foodCourt.domain.api.IUsersServicePort;
 import com.pragma.foodCourt.domain.model.UsersModel;
 import lombok.RequiredArgsConstructor;
@@ -22,7 +22,7 @@ public class UsersHandler implements IUsersHandler {
     private final IUsersServicePort usersServicePort;
     private final IUsersRequestMapper usersRequestMapper;
     private final IUsersResponseMapper usersResponseMapper;
-    private final RestaurantFeignClient restaurant;
+    private final IRestaurantFeignClient restaurant;
     @Override
     public void saveUsers(UsersRequestDto usersRequestDto) {
         UsersModel usersModel = usersRequestMapper.toUsers(usersRequestDto);

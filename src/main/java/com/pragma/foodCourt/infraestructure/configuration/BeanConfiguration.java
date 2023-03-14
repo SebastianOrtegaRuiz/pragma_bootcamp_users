@@ -6,6 +6,7 @@ import com.pragma.foodCourt.domain.spi.IRolesPersistencePort;
 import com.pragma.foodCourt.domain.spi.IUsersPersistencePort;
 import com.pragma.foodCourt.domain.usecase.RolesUseCase;
 import com.pragma.foodCourt.domain.usecase.UsersUseCase;
+import com.pragma.foodCourt.domain.validations.Validations;
 import com.pragma.foodCourt.infraestructure.output.adapter.RolesJpaAdapter;
 import com.pragma.foodCourt.infraestructure.output.adapter.UsersJpaAdapter;
 import com.pragma.foodCourt.infraestructure.output.mapper.IRolesEntityMapper;
@@ -33,7 +34,7 @@ public class BeanConfiguration {
 
     @Bean
     public IUsersServicePort usersServicePort() {
-        return new UsersUseCase(usersPersistencePort());
+        return new UsersUseCase(usersPersistencePort(), new Validations());
     }
 
     @Bean

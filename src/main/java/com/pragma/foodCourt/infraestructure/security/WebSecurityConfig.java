@@ -28,7 +28,8 @@ public class WebSecurityConfig {
 
         return httpSecurity.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/api/v1/users/**").hasRole("Administrador") //esto se añadió
+                //.antMatchers("/api/v1/users/**").access("hasAuthority('ADMINISTRADOR') OR hasAuthority('PROPIETARIO')")
+                .antMatchers("/api/v1/users/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
