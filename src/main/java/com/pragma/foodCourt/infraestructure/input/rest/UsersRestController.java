@@ -61,4 +61,10 @@ public class UsersRestController {
     public ResponseEntity<UsersResponseDto> getUserById(@ApiParam(value = "id to search for a specific user", required = true) @PathVariable("id") Long id) {
         return ResponseEntity.ok(usersHandler.getUserById(id));
     }
+
+    @ApiOperation(value = "Get one specific user by email", response = UsersResponseDto.class)
+    @GetMapping("/byEmail/{email}")
+    public ResponseEntity<UsersResponseDto> getUserByEmail(@ApiParam(value = "email to search for a specific user", required = true) @PathVariable("email") String email) {
+        return ResponseEntity.ok(usersHandler.getUserByEmail(email));
+    }
 }

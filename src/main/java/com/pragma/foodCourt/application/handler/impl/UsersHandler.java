@@ -42,4 +42,9 @@ public class UsersHandler implements IUsersHandler {
     public UsersResponseDto getUserById(Long id) {
         return usersResponseMapper.toResponse(usersServicePort.getUserById(id));
     }
+
+    @Override
+    public UsersResponseDto getUserByEmail(String email) {
+        return usersResponseMapper.toResponse(usersServicePort.getUserByEmail(email));
+    }
 }

@@ -40,4 +40,8 @@ public class UsersUseCase implements IUsersServicePort {
     public UsersModel getUserById(Long id) {
         return usersPersistencePort.getUserById(id);
     }
+
+    public UsersModel getUserByEmail(String email) {
+        return usersPersistencePort.getUserByEmail(email);
+    }
 }

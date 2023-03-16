@@ -13,5 +13,7 @@ public interface IUsersHandler {
 
     UsersResponseDto getUserById(Long id);
 
+    UsersResponseDto getUserByEmail(String email);
+
     List<RestaurantFeignDto> getAllRestaurants();
 }
