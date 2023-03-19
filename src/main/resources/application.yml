@@ -1,0 +1,19 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/users
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant-path-matcher
+appDescription: "FoodCourt for Pragma BootCamp"
+appVersion: "1.0.0"
